@@ -2,16 +2,16 @@
 
 {% block content %}
         <h1>Craig & Princess's Event Planner</h1>
-
+        
         <form action="/events" method="post">
           <label for="event_name">Event Name:</label>
           <input type="text" name="event_name" id="event_name">
           <label for="event_description">Event Description:</label>
           <textarea name="event_description" id="event_description" rows="2" cols="20"></textarea>
           <input type="submit" value="Schedule New Event">
-        </form>
+          </form>
 
-        {% for event in event %}  
+        {% for event in events %}  
         <div>
           <p>
             {{ event.event_name }}: <b>{{ event.event_description }}</b>
@@ -23,3 +23,6 @@
         {% endfor %}
         <p>
 {% endblock %}
+
+      
+
