@@ -2,14 +2,8 @@
 
 {% block content %}
         <h1>Craig & Princess's Event Planner</h1>
-        
-        <form action="/events" method="post">
-          <label for="event_name">Event Name:</label>
-          <input type="text" name="event_name" id="event_name">
-          <label for="event_description">Event Description:</label>
-          <textarea name="event_description" id="event_description" rows="2" cols="20"></textarea>
-          <input type="submit" value="Schedule New Event">
-          </form>
+
+
 
         {% for event in events %}  
         <div>
@@ -22,7 +16,20 @@
         </div>
         {% endfor %}
         <p>
-{% endblock %}
 
-      
+
+          <form action="/events" method="post">
+          <label for="event_name">Event Name:</label>
+          <input type="text" name="event_name" id="event_name">
+          <label for="event_date">Date of Event:</label>
+          <input type="text" name="event_date" id="event_date">
+          <label for="guest_total">Number of Guests:</label>
+          <input type="text" name="guest_total" id="guest_total">
+          <label for="room_location">Event Location:</label>
+          <input type="text" name="room_location" id="room_location">
+          <label for="event_description">Event Description:</label>
+          <textarea name="event_description" id="event_description" rows="2" cols="20"></textarea>
+          <input type="submit" value="Schedule New Event">
+          </form>
+{% endblock %}
 

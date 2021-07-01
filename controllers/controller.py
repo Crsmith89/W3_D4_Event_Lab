@@ -17,7 +17,7 @@ def add_event():
     room_location = request.form['room_location']
     event_description = request.form['event_description']
     
-    new_event = event(event_date, event_name, guest_total, room_location, event_description, False)
+    new_event = Event(event_date, event_name, guest_total, room_location, event_description, False)
     add_new_event(new_event)
     return redirect('/events')
 
